@@ -26,9 +26,22 @@ const fetchRecipes = async (query) => {
       button.textContent = "View Recipes";
       recipeDiv.appendChild(button);
 
+      const newVideoButton = document.createElement('button');
+      newVideoButton.textContent = "View Video";
+      recipeDiv.appendChild(newVideoButton);
+
       // adding addEventListener to recipe button
       button.addEventListener('click',() => {
         openRecipePopup(meal);
+      });
+
+        // Adding event listener to the new video button to open the YouTube URL
+      newVideoButton.addEventListener('click', () => {
+        if (meal.strYoutube) {
+          window.open(meal.strYoutube, '_blank');
+        } else {
+          alert('No YouTube video available for this recipe.');
+        }
       });
 
       recipeContainer.appendChild(recipeDiv);
