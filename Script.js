@@ -4,6 +4,35 @@ const recipeContainer = document.querySelector('.recipe-container');
 const recipeDetailsContent = document.querySelector('.recipe-details-content');
 const recipeCloseBtn = document.querySelector('.recipe-close-btn');
 
+document.addEventListener("DOMContentLoaded", function() {
+  const SearchBox = document.querySelector('.SearchBox');
+  const suggestionDiv = document.getElementById("suggestion");
+  const itemList = [
+      "cake",
+      "sandwich",
+      "paneer",
+      "pizza",
+      "egg",
+      "milk"
+  ];
+
+  SearchBox.addEventListener("input", function() {
+      const searchTerm = SearchBox.value.toLowerCase();
+      const suggestion = getSuggestion(searchTerm, itemList);
+      suggestionDiv.textContent = suggestion;
+  });
+
+  function getSuggestion(searchTerm, itemList) {
+      for (const item of itemList) {
+          const lowerItem = item.toLowerCase();
+          if (lowerItem.startsWith(searchTerm)) {
+              return item;
+          }
+      }
+      return "";
+  }
+});
+
 // function to get recipes
 const fetchRecipes = async (query) => {
   recipeContainer.innerHTML = "<h2>Fetching Recipes...</h2>";
