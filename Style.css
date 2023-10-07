@@ -50,6 +50,23 @@ form button[type="submit"]{
     transition: background-color 0.2s ease-in-out;
 }
 
+form button[type="reset"]{
+    background-color: rgb(121, 2, 2);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out; /* Increase the duration to 0.5s */
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.container{
+    margin-left: 75%;
+    font-size: 18px;
+}
+
 form button[type="submit"]:hover.recipe button:hover{
     border-right-color: #ff5c5c;
 }
