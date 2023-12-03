@@ -1,2 +1,2 @@
 # Testy Bits Hub
-My RecipeApp from complete web Devlopment
+My Testy Bits Hub from complete web Devlopment
